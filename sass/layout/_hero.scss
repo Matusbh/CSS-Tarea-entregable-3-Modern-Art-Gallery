@@ -1,0 +1,185 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.hero {
+    @include mx.breakpoint(desktop) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @include mx.breakpoint(tablethorizontal) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        @include mx.breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: auto;
+            gap: 24px;
+            grid-template-areas:
+              "title img1"
+              "text img1"
+              "img2 img3"
+              "img2 footer";
+            width: 100%;
+            max-width: 820px;
+            padding: 32px 16px;
+        }
+
+        @include mx.breakpoint(desktopxl) {
+            margin-left: 0;
+        }
+
+
+    }
+    &__content {
+        @include mx.breakpoint(tablet) {
+            display: contents;
+        }
+        .img {
+            width: 100%;
+            margin-bottom: 16px;
+            @include mx.breakpoint(tablet) {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        @include mx.breakpoint(tablet) {
+            .img-1 {
+                grid-area: img1;
+                width: 364px;
+            }
+          
+              .img-2 {
+                grid-area: img2;
+                width: 400px;
+                height: 721px;
+            }
+          
+              .img-3 {
+                grid-area: img3;
+                width: 280px;
+                height: 313px;
+                position: relative;
+                right: -85px;
+            }
+        }
+        @include mx.breakpoint(desktop) {
+            .img-1 {
+                grid-area: img1;
+                width: 635px;
+                height: 400px;
+                position: relative;
+                left: 140px;
+            }
+          
+              .img-2 {
+                grid-area: img2;
+                width: 635px;
+                height: 720px;
+            }
+          
+              .img-3 {
+                grid-area: img3;
+                width: 445px;
+                height: 313px;
+                position: relative;
+                right: -330px;
+            }
+        }
+
+
+    }
+
+    &__tittle {
+        font-family: v.$tittle-font;
+        font-size: 50px;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 45px;
+        color: v.$black;
+        margin-bottom: 21px;
+        @include mx.breakpoint(tablet) {
+            width: 223px;
+            height: 135px;
+        }
+        @include mx.breakpoint(desktop) {
+            width: 330px;
+            height: 135px;
+            font-size: 55px;
+            line-height: 60px;
+        }
+        @include mx.breakpoint(desktopxl) {
+            width: 330px;
+            height: 135px;
+            font-size: 55px;
+            line-height: 60px;
+        }
+        
+
+    }
+
+    &__subtittle {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+        color: v.$grey;
+        margin-bottom: 32px;
+        @include mx.breakpoint(tablet) {
+            width: 223px;
+            height: 135px;
+            position: relative;
+            top: -31px;
+        
+        }
+    }
+
+    &__footer {
+        background-color: v.$black;
+        width: 360px;
+        height: 293px;
+        @include mx.breakpoint(tablet) {
+            grid-area: footer;
+            background-color: #151515;
+            width: 280px;
+            height: 396px;
+            position: relative;
+            right: -85px;
+            top: -29px;
+        }
+        @include mx.breakpoint(desktop) {
+            grid-area: footer;
+            background-color: #151515;
+            width: 445px;
+            height: 396px;
+            position: relative;
+            right: -330px;
+            top: -29px;
+        }
+
+        &-tittle {
+            color: v.$white;
+            font-family: v.$tittle-font;
+            font-size: 50px;
+            line-height: 45px;
+            padding: 48px 25px 0px 25px;
+            
+        }
+
+
+        &-subtittle {
+            color: v.$white;
+            font-size: 18px;
+            font-weight: 100;
+            line-height: 28px;
+            padding-top: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}

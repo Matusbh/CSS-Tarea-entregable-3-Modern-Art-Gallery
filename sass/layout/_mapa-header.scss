@@ -1,0 +1,81 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.mapa {
+    height: 545px;
+    margin-bottom: 0;
+    @include mx.breakpoint(tablet) {
+        width: 805px;
+        height: 1173px;
+    }
+
+    @include mx.breakpoint(tablethorizontal) {
+        height: 480px;
+        position: relative;
+    }
+
+    @include mx.breakpoint(desktop) {
+        height: 550px;
+    }
+
+    &__mapa {
+        width: 100%;
+        position: relative;
+        top: -75px;
+        z-index: -2;
+        @include mx.breakpoint(desktop) {
+            display: none;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            display: none;
+        }
+        
+    }
+    
+    &__desktop {
+        display: none;
+        @include mx.breakpoint(tablet) {
+            display: none;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            display: block;
+            width: 1180px;
+            position: absolute;
+            top: 0px;
+        }
+
+        @include mx.breakpoint(desktop) {
+            display: block;
+            width: 1280px;
+            height: 600px;
+            position: absolute;
+            top: -50px;
+        }
+
+        @include mx.breakpoint(desktopxl) {
+            display: block;
+            width: 1905px;
+        }
+    }
+    
+    &__location {
+        position: relative;
+        top: -419px;
+        right: -42%;
+        @include mx.breakpoint(tablet) {
+            top: -660px;
+            right: -46%;
+        }
+
+        @include mx.breakpoint(desktop) {
+            display: none;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            top: -784px;
+            right: -59%;
+        }
+    }
+}

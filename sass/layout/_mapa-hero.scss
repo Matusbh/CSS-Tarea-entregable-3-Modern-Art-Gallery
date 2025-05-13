@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.mapa-hero {
+    background-color: v.$black;
+    height: 493px;
+    
+
+    .container {
+        @include mx.breakpoint(tablet) {
+            display: flex;
+            gap: 68px;
+        }
+        @include mx.breakpoint(desktop) {
+            display: flex;
+            gap: 300px;
+        }
+        .flex-junto{
+            @include mx.breakpoint(tablet) {
+                margin-top: 88px;
+                width: 600px;
+            }
+            @include mx.breakpoint(desktop) {
+                margin-top: 88px;
+                width: 600px;
+            }
+
+        }
+    }
+    &__tittle {
+        font-family: v.$tittle-font;
+        font-size: 50px;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 45px;
+        color: v.$white;
+        padding-top: 50px;
+        margin-bottom: 50px;
+        @include mx.breakpoint(tablet) {
+            font-size: 55px;
+            margin-top: 88px;
+            padding-top: 0;
+            line-height: 60px;
+
+        }
+    }
+
+    &__subtittle {
+        font-family: v.$tittle-font;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 32px;
+        color: v.$orange;
+        margin-bottom: 32px;
+    }
+
+    &__direction {
+        font-size: 20px;
+        font-weight: 100;
+        line-height: 28px;
+        color: v.$white;
+        margin-bottom: 32px;
+    }
+    &__body {
+        font-size: 20px;
+        font-weight: 100;
+        line-height: 28px;
+        color: v.$white;
+        margin-bottom: 32px;
+    }
+}

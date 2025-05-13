@@ -1,0 +1,132 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.header {
+    margin-bottom: 120px;
+    @include mx.breakpoint(tablethorizontal) {
+        margin-left: 200px;
+    }
+    @include mx.breakpoint(desktop) {
+        margin-left: 0px;
+    }
+
+    @include mx.breakpoint(desktopxl) {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .container {
+        @include mx.breakpoint(tablet) {
+            display: flex;
+        }
+        @include mx.breakpoint(desktop) {
+            margin-left: 0px;
+        }
+
+        
+    }
+    &__img-mobile {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        @include mx.breakpoint(tablet) {
+            display: none; 
+        }
+        @include mx.breakpoint(desktop) {
+            display: none;
+        }
+    }
+    &__img-tablet {
+        display: none;
+        position: relative;
+        @include mx.breakpoint(desktop) {
+            display: block; 
+        }
+    
+        @include mx.breakpoint(tablet) {
+            width: 437px;
+            height: 700px;
+            display: inline-block;
+        }
+    }
+    
+    .header__img-tablet-caja {
+        @include mx.breakpoint(desktop) {
+            height: 700px;
+            width: 450px;
+            background-color: v.$black;
+        }
+    }
+
+    &__content {
+        
+        @include mx.breakpoint(tablet) {
+            width: 378PX;
+            max-width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            translate: 95% -100%;
+        }
+        @include mx.breakpoint(tablethorizontal) {
+            margin-left: 150px;
+        }
+
+        @include mx.breakpoint(desktop) {
+            margin: 0;
+            margin-top: 100px;
+        }
+    }
+
+    &__tittle {
+        width: 72%;
+        font-family: v.$tittle-font;
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 55px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        @include mx.breakpoint(desktop) {
+            position: relative;
+            left: -210px;
+            color: v.$white;
+            margin-top: 40px;
+            bottom: -60px;
+        }
+        
+        @include mx.breakpoint(desktopxl) {
+            position: relative;
+            left: -210px;
+            color: v.$white;
+            margin-top: 40px;
+            bottom: -60px;
+            left: 160px; 
+        }
+    }
+    
+    &__subtittle {
+        color: v.$grey;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        padding-right: 40px;
+        margin-bottom: 32px;
+        @include mx.breakpoint(desktop) {
+            position: relative;
+            margin: 0;
+            margin-top: 100px;
+            bottom: 153px;
+            left: 330px;
+        }
+
+        @include mx.breakpoint(desktopxl) {
+            position: relative;
+            margin: 0;
+            margin-top: 100px;
+            bottom: 153px;
+            left: 730px; 
+        }
+    }
+}
+

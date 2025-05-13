@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.mapa-footer {
+    background-color: v.$orange;
+    height: 336px;
+    @include mx.breakpoint(tablet) {
+        height: 216px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-left: 30px;
+        @include mx.breakpoint(tablet) {
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        @include mx.breakpoint(desktop) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        }
+        
+        @include mx.breakpoint(desktopxl) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        }
+
+    }
+
+    &__logo {
+        padding-top: 50px;
+        @include mx.breakpoint(tablet) {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    p {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 26px;
+        color: v.$black;
+        @include mx.breakpoint(tablet) {
+            width: 281px; 
+        }
+        @include mx.breakpoint(desktop) {
+            width: 450px; 
+        }
+        
+    }
+
+    &__social_media {
+        display: flex;
+        gap: 30px;
+        a img {
+            width: 130%;
+        }
+    }
+}

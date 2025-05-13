@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.container {
+    margin-left: 16px;
+    margin-right: 16px;
+    @include mx.breakpoint(tablet) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    @include mx.breakpoint(desktop) {
+        margin-left: 165px;
+        margin-right: 165px;
+    }
+}

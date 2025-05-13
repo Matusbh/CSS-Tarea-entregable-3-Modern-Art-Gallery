@@ -1,0 +1,76 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mx;
+
+.footer {
+    margin-top: 120px;
+    background-color: v.$black;
+    width: 100%;
+    padding-bottom: 50px;
+
+    @include mx.breakpoint(desktop) {
+        width: 110%;
+    }
+
+    @include mx.breakpoint(desktopxl) {
+        width: 110%;
+    }
+    
+    .container {
+        @include mx.breakpoint(desktop) {
+            display: flex;
+            gap: 60px;
+            flex-direction: row;
+            padding-top: 50px
+        }
+        @include mx.breakpoint(desktopxl) {
+            display: flex;
+            flex-direction: row;
+            padding-top: 50px;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    
+    &__logo {
+        margin-top: 48px;
+        margin-left: 32px;
+        width: 20%;
+        @include mx.breakpoint(desktop) {
+            width: 100%;
+        }
+    }
+
+    &__subtittle {
+        color: v.$white;
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 28px;
+        width: 90%;
+        margin-top: 38px;
+        margin-bottom: 38px;
+        margin-left: 32px;
+        margin-right: 32px;
+
+        @include mx.breakpoint(desktop) {
+            width: 40%;
+        }
+        @include mx.breakpoint(desktopxl) {
+            width: 25%;
+        }
+    }
+
+    &__social_media {
+        display: flex;
+        gap: 20px;
+        padding-left: 32px;
+        a img {
+            width: 120%;
+        }
+         @include mx.breakpoint(desktop) {
+            margin-top: 50px;
+
+        }
+    }
+
+}
+

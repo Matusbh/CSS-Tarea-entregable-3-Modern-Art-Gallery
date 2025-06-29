@@ -8,7 +8,9 @@ Este es un proyecto de landing page para una galería de arte moderna. Incluye u
 
 ## 🌐 Ver página en vivo
 
-👉 [Haz clic aquí para ver la landing page](https://matusbh.github.io/CSS-Tarea-entregable-1-Header-Spa-Beauty/)
+👉 [Haz clic aquí para ver la landing page](https://matusbh.github.io/CSS-Tarea-entregable-3-Modern-Art-Gallery/)
+
+
 
 ---
 
